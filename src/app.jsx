@@ -1,6 +1,8 @@
 import React, { useEffect , useState} from "react";
 import bglog from "./utils/bglog.js";
 import QueryContainer from "./containers/QueryContainer.jsx";
+import ReactJson from 'react-json-view';
+
 import { ApolloClient } from 'apollo-client';
 import { InMemoryCache } from 'apollo-cache-inmemory';
 import ResultDisplay from "./components/GraphQLResponse.jsx"

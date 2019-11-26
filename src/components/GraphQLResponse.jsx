@@ -1,14 +1,10 @@
 import React from 'react';
 import ReactJson from 'react-json-view';
-<<<<<<< HEAD
-import bglog from "../bglog";
-
 import { ApolloClient } from 'apollo-client';
-
-
-=======
 import bglog from '../utils/bglog'
->>>>>>> d493fe1bde2c87954e7fbbe4039124cccaca0978
+import styles from './GraphQLResponse.css';
+
+
 const GraphQLResponse = (props) => {
   bglog(['this is responseArr', props.results]);
   let responseArr = [];
