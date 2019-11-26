@@ -3,6 +3,7 @@ import bglog from "./bglog.js";
 import QueryContainer from "./containers/QueryContainer.jsx";
 
 import { ApolloClient } from 'apollo-client';
+import { InMemoryCache } from 'apollo-cache-inmemory';
 
 
 const App = (props) => {
@@ -29,6 +30,11 @@ const App = (props) => {
   });
 
   bglog(queries);
+
+
+  //const  client = new ApolloClient({
+  //   cache: new InMemoryCache()
+  // })
   return (
     <div>
       {results}

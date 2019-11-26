@@ -1,6 +1,10 @@
 import React from 'react';
 import ReactJson from 'react-json-view';
 import bglog from "../bglog";
+
+import { ApolloClient } from 'apollo-client';
+
+
 const GraphQLResponse = (props) => {
 
   return (
