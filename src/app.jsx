@@ -3,6 +3,10 @@ import bglog from "./bglog.js";
 import QueryContainer from "./containers/QueryContainer.jsx";
 
 import { ApolloClient } from 'apollo-client';
+import { InMemoryCache } from 'apollo-cache-inmemory';
+import { ApolloProvider } from 'react-apollo';
+import { onError } from 'apollo-link-error';
+import { ApolloLink } from 'apollo-link';
 
 
 const App = (props) => {
