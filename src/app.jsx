@@ -5,12 +5,24 @@ import ReactJson from 'react-json-view';
 
 import { ApolloClient } from 'apollo-client';
 import { InMemoryCache } from 'apollo-cache-inmemory';
+import { HttpLink } from 'apollo-link-http';
 import ResultDisplay from "./components/GraphQLResponse.jsx"
+
+import { useQuery } from '@apollo/react-hooks';
+
 
 const App = (props) => {
   // console.log('i am in useEffect');
-  const [queries, updateQueries] = useState([]);
-  const [results, updateResults] = useState([]);
+  const [queries, updateQueries] = useState([]); //query history hook
+  const [results, updateResults] = useState([]); //current query display hook
+
+
+  const cache=new InMemoryCache(); //initialize caching system
+
+  const client=new ApolloClient({ 
+    link: new HttpLink(),
+    cache
+  });
 
   chrome.devtools.network.onRequestFinished.addListener((httpReq) => {
     if(httpReq.request.postData){
