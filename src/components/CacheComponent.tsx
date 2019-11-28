@@ -7,13 +7,13 @@ import { createHttpLink } from 'apollo-link http'
 import ApolloClient from 'apollo-client'
 import { ApolloLink } from "apollo-link"
 import { InMemoryCache } from 'apollo-cache-inmemory'
-import { fragmentCachedRedirect } from "apollo-link-state-fragment"
+// import { fragmentCachedRedirect } from "apollo-link-state-fragment"
 
 import {
     fragmentCacheRedirect,
     fragmentLinkState
   } from "apollo-link-state-fragment"
-  
+
 import { graphql, ApolloProvider } from 'react-apollo'
 import graphql from 'graphql-tag'
 import { ReactJsonViewProps } from 'react-json-view';
@@ -28,6 +28,7 @@ injectGlobal`
     }
     `;
 
+    
     const cache=new InMemoryCache({
         cachedRedirects: {
             Query: {
@@ -39,10 +40,10 @@ injectGlobal`
     const caches=[];
     //cache date time and queries and query results, 
     const client = new ApolloClient({
-        link: createHttpLink({ url: "/graphql"}),
-        cache: new InMemoryCache();
-
-    });
+        link: httpLink.create(),
+        cache: new InMemoryCache()
+      });
+    
 
     caches.push(client.cache)
 

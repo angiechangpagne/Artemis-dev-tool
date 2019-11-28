@@ -1,4 +1,4 @@
-import React, { useEffect , useState} from "react";
+import React, { useEffect , useState, Component} from "react";
 import bglog from "./utils/bglog.js";
 import QueryContainer from "./containers/QueryContainer.jsx";
 import ReactJson from 'react-json-view';
@@ -10,6 +10,14 @@ import ResultDisplay from "./components/GraphQLResponse.jsx"
 
 import { useQuery } from '@apollo/react-hooks';
 
+
+
+import LinkList from './components/LinkList'
+import CreateLink from './components/CreateLink'
+import Header from './components/Header'
+import { Switch, Route, Redirect } from 'react-router-dom'
+import Login from './components/Login'
+import Search from './components/Search'
 
 const App = (props) => {
   // console.log('i am in useEffect');
