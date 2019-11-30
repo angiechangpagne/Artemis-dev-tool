@@ -73,7 +73,7 @@ export const resolvers = {
             const { count } =cache.readQuery<any>({
                 query: countQuery
             })
-            return parent.maxHP! % count ===0
+            return parent.maxHP! % count ===0 
         },
         randomPerson: async parent => {
             const response = await fetch(

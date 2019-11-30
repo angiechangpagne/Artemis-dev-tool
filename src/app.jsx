@@ -1,7 +1,34 @@
-import React, { useEffect, useState } from "react";
+import React,{ useEffect, useState } from "react";
 import QueryContainer from "./containers/QueryContainer.jsx";
 import ResponseContainer from './containers/ResponseContainer.jsx'
 import "./stylesheets/style.scss";
+import { InMemoryCache } from "apollo-cache-inmemory";
+import { ApolloProvider, useQuery } from "@apollo/react-hooks";
+import gql from "graphql-tag"; //for @client, do operations locally
+import { ApolloClient } from "apollo-client";
+import { HttpLink } from "apollo-link-http";
+import ReactDOM from "react-dom";
+import { useApolloClient } from "@apollo/react-hooks";
+
+
+const cache = new InMemoryCache();
+const client = new ApolloClient({
+  cache, 
+  link: new HttpLink({ uri:"http://localhost:4000/graphql" }),
+  resolvers: {},
+})
+
+cache.writeData({
+  data: {
+    todos: [],
+    visibilityFilter: 'SHOW_ALL',
+    networkStatus: {
+      __typename: 'NetworkStatus',
+      isConnected: false,
+    },
+  },
+});
+
 
 const App = props => {
   const [queries, updateQueries] = useState([]);
