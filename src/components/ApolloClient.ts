@@ -2,6 +2,8 @@ import { ApolloClient } from "apollo-client";
 import { HttpLink } from 'apollo-link-http'
 import { ApolloLink, concat } from 'apollo-link';
 import { InMemoryCache, NormalizedCachedObject, NormalizedCacheObject } from 'apollo-cache-inmemory';
+import { ApolloProvider } from 'react-apollo';
+import { createGlobalStyle } from 'styled-components';
 
 
 import StateResolvers from './resolvers'

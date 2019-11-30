@@ -20,23 +20,18 @@ const GET_CART_ITEMS = gql`
     cartItems @client
   }
 `;
-
 // const cache = new InMemoryCache();
 // const client = new ApolloClient({
 //   cache, 
 //   link: new HttpLink({ uri:"http://localhost:4000/graphql" }),
 //   resolvers: {},
 // })
-
-
-
 const cache = new InMemoryCache();
 cache.writeData({
   data: {
     cartItems: [],
   },
 });
-
 const client = new ApolloClient({
   cache,
   link: new HttpLink({
@@ -51,6 +46,8 @@ const client = new ApolloClient({
     },
   },
 });
+
+
 
 const GET_LAUNCH_DETAILS = gql`
   query LaunchDetails($launchId: ID!) {
@@ -112,9 +109,28 @@ const App = props => {
     <div id="containers">
       <QueryContainer queries={queries} />
       <ResponseContainer results={results} />
+
+
+      <ApolloProvider client={client}>
+						<div
+							css={{
+								display: 'grid',
+								gridTemplateColumns: '80px repeat(auto-fit, 300px)',
+								alignItems: 'start',
+								height: 'calc(100vh - 4px)',
+								overflow: 'hidden',
+							}}
+						>
+						</div>
+					</ApolloProvider>
     </div>
   );
 };
+
+
+
+
+
 
 function IsJsonString(str) {
   try {
