@@ -2,7 +2,7 @@ import React,{ useEffect, useState } from "react";
 import QueryContainer from "./containers/QueryContainer.jsx";
 import ResponseContainer from './containers/ResponseContainer.jsx'
 import "./stylesheets/style.scss";
-import { InMemoryCache } from "apollo-cache-inmemory";
+import { InMemoryCache, NormalizedCacheObject } from "apollo-cache-inmemory";
 import { ApolloProvider, useQuery } from "@apollo/react-hooks";
 import gql from "graphql-tag"; //for @client, do operations locally
 import { ApolloClient } from "apollo-client";
@@ -11,12 +11,58 @@ import ReactDOM from "react-dom";
 import { useApolloClient } from "@apollo/react-hooks";
 
 
+import { createDevTools } from 'redux-devtools';
+import LogMonitor from 'redux-devtools-log-monitor';
+
+
+const GET_CART_ITEMS = gql`
+  query GetCartItems {
+    cartItems @client
+  }
+`;
+
+// const cache = new InMemoryCache();
+// const client = new ApolloClient({
+//   cache, 
+//   link: new HttpLink({ uri:"http://localhost:4000/graphql" }),
+//   resolvers: {},
+// })
+
+
+
 const cache = new InMemoryCache();
+cache.writeData({
+  data: {
+    cartItems: [],
+  },
+});
+
 const client = new ApolloClient({
-  cache, 
-  link: new HttpLink({ uri:"http://localhost:4000/graphql" }),
-  resolvers: {},
-})
+  cache,
+  link: new HttpLink({
+    uri: 'http://localhost:4000/graphql',
+  }),
+  resolvers: {
+    Launch: {
+      isInCart: (launch, _args, { cache }) => {
+        const { cartItems } = cache.readQuery({ query: GET_CART_ITEMS });
+        return cartItems.includes(launch.id);
+      },
+    },
+  },
+});
+
+const GET_LAUNCH_DETAILS = gql`
+  query LaunchDetails($launchId: ID!) {
+    launch(id: $launchId) {
+      isInCart @client
+      site
+      rocket {
+        type
+      }
+    }
+  }
+`;
 
 cache.writeData({
   data: {
@@ -29,7 +75,9 @@ cache.writeData({
   },
 });
 
+cache.writeData({ data });
 
+// client.onResetStore(() => cache.writeData({ data }));
 const App = props => {
   const [queries, updateQueries] = useState([]);
   const [results, updateResults] = useState([]);
