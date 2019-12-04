@@ -1,7 +1,6 @@
 import React, { useEffect, useState } from "react";
 import ObserverContainer from "./containers/ObserverContainer.jsx";
 import "./stylesheets/style.scss";
-// import injectStyles from './containers/styles';
 
 
 const fetch = require("isomorphic-fetch");
@@ -55,10 +54,11 @@ const App = props => {
 
 
   return (
+
     <React.Fragment>
       <ObserverContainer />
-      
     </React.Fragment>
+
   );
 };
 
