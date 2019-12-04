@@ -1,3 +1,4 @@
+<<<<<<< HEAD
 import React, { useState, useEffect } from 'react';
 import BoxLayout from "../hoc/BoxLayout";
 // import TextField from "@material-ui/core/TextField";
@@ -11,24 +12,28 @@ import BoxLayout from "../hoc/BoxLayout";
 import Grid from "@material-ui/core/Grid";
 
 
+=======
+import React from 'react';
+>>>>>>> a83f7794a1ac524675a3c166693686088745c906
 
 const Headers = (props) => {
-  // useEffect will trigger re-render when either schemaStatus OR cacheStatus gets updated
-  // useEffect(() => {
-    
-  // },[schemaStatus, cacheStatus])
-
   return (
     <React.Fragment>
     <Grid>
           <div> ARTEMIS DEV TOOL
 
         <img></img>
+<<<<<<< HEAD
           </div>
           <div onClick={()=> props.schemaToggle()}>
+=======
+      </div>
+      <div id='schema-cache-button'>
+        <div onClick={() => props.schemaToggle()}>
+>>>>>>> a83f7794a1ac524675a3c166693686088745c906
           SCHEMA
         </div>
-        <div onClick={()=> props.cacheToggle()}>
+        <div onClick={() => props.cacheToggle()}>
           CACHE
         </div>
       <div>

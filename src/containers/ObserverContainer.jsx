@@ -27,7 +27,15 @@ const ObserverContainers = props => {
   const [history, recordHistory] = useState([]);
   const [historyBtn, historyBtnToggle] = useState(0);
   const [url, updateUrl] = useState("");
-  
+  const [cache, updateCache] = useState({});
+
+  const getCache = () => {
+    msgToBackground("contentScript", "getCache", response => {
+      console.log(response)
+      msgToBackground("contentScript", "retrieveCache", response => { updateCache(response) });
+    });
+  }
+
   function isToggle(index) {
     historyBtnToggle(index);
     msgToBackground(
@@ -44,7 +52,7 @@ const ObserverContainers = props => {
 
   useEffect(() => {
     chrome.devtools.network.onRequestFinished.addListener(httpReq => {
-      
+
       if (httpReq.request.postData) {
         updateUrl(httpReq.request.url);
         httpReq.getContent(res => {
@@ -70,9 +78,6 @@ const ObserverContainers = props => {
     });
   }, []);
 
-  console.log("this is history", history);
-  console.log('this is props in observer', props);
-  
   return (
     <React.Fragment>
 
@@ -85,6 +90,7 @@ const ObserverContainers = props => {
         
         <Query2 queries={queries} historyBtn={historyBtn} />
         <GraphQLResponse results={results} historyBtn={historyBtn} />
+<<<<<<< HEAD
         { props.schemaStatus ? <Schema historyBtn={historyBtn} url={url} queries={queries}/> : null }
         { props.cacheStatus ? <ApolloGraphQLCache historyBtn={historyBtn} url={url} queries={queries}/> : null}
         <Button id="cache"  variant="contained"
@@ -93,12 +99,16 @@ const ObserverContainers = props => {
 
       
     
+=======
+        {props.schemaStatus ? <Schema historyBtn={historyBtn} url={url} queries={queries} /> : null}
+        {props.cacheStatus ? <ApolloGraphQLCache historyBtn={historyBtn} url={url} queries={queries} getCache={getCache} cache={cache} /> : null}
+>>>>>>> a83f7794a1ac524675a3c166693686088745c906
       </div>
     </React.Fragment>
   );
 };
 
-const msgToBackground = function(type, msg, callback, newBody) {
+const msgToBackground = function (type, msg, callback, newBody) {
   if (chrome && chrome.runtime) {
     chrome.runtime.sendMessage(
       {
@@ -106,21 +116,14 @@ const msgToBackground = function(type, msg, callback, newBody) {
         msg,
         newBody
       },
-      function(response) {
+      function (response) {
         callback(response);
       }
     );
   }
 };
 
-const getCache=() =>{
-  msgToBackground("contentScript", "getCache", response => {
-    console.log(response)
-    msgToBackground("contentScript", "retrieveCache", response => {console.log(response)} );
-  });
-}
-
-const IsJsonString = function(str) {
+const IsJsonString = function (str) {
   try {
     JSON.parse(str);
   } catch (e) {
