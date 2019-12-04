@@ -3,11 +3,9 @@ import React from 'react';
 const Headers = (props) => {
   return (
     <React.Fragment>
-    <Grid>
-          <div> ARTEMIS DEV TOOL
+ 
+          <div> ARTEMIS DEV TOOL </div> 
 
-        <img></img>
-      </div>
       <div id='schema-cache-button'>
         <div onClick={() => props.schemaToggle()}>
           SCHEMA
@@ -15,9 +13,10 @@ const Headers = (props) => {
         <div onClick={() => props.cacheToggle()}>
           CACHE
         </div>
-      <div>
+    
+
       </div>
-      </Grid>
+
     </React.Fragment>
   )
 }
