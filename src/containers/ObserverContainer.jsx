@@ -90,19 +90,16 @@ const ObserverContainers = props => {
         
         <Query2 queries={queries} historyBtn={historyBtn} />
         <GraphQLResponse results={results} historyBtn={historyBtn} />
-<<<<<<< HEAD
         { props.schemaStatus ? <Schema historyBtn={historyBtn} url={url} queries={queries}/> : null }
         { props.cacheStatus ? <ApolloGraphQLCache historyBtn={historyBtn} url={url} queries={queries}/> : null}
         <Button id="cache"  variant="contained"
           color="secondary" onClick={getCache}> Get Cache  </Button>
      
-
+     {props.schemaStatus ? <Schema historyBtn={historyBtn} url={url} queries={queries} /> : null}
+        {props.cacheStatus ? <ApolloGraphQLCache historyBtn={historyBtn} url={url} queries={queries} getCache={getCache} cache={cache} /> : null}
       
     
-=======
-        {props.schemaStatus ? <Schema historyBtn={historyBtn} url={url} queries={queries} /> : null}
-        {props.cacheStatus ? <ApolloGraphQLCache historyBtn={historyBtn} url={url} queries={queries} getCache={getCache} cache={cache} /> : null}
->>>>>>> a83f7794a1ac524675a3c166693686088745c906
+
       </div>
     </React.Fragment>
   );
