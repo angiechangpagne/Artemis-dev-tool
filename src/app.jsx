@@ -4,6 +4,9 @@ import "./stylesheets/style.scss";
 import Headers from './containers/Headers.jsx';
 
 
+import Container from '@material-ui/core/Container';
+
+
 const App = props => {
   const [schemaStatus, updateSchemaStatus] = useState(false);
   const [cacheStatus, updateCacheStatus] = useState(false);
@@ -32,6 +35,7 @@ const App = props => {
     <React.Fragment>
       <Headers schemaStatus={schemaStatus} cacheStatus={cacheStatus} updateSchemaStatus={updateSchemaStatus} updateCacheStatus={updateCacheStatus} schemaToggle={schemaToggle} cacheToggle={cacheToggle}/>
       <ObserverContainer schemaStatus={schemaStatus} cacheStatus={cacheStatus}/>
+      
     </React.Fragment>
   );
 };

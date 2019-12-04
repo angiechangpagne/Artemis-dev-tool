@@ -6,8 +6,20 @@ import Schema from "../components/Schema.jsx";
 import ApolloGraphQLCache from "../components/ApolloGraphQLCache.jsx";
 
 import BoxLayout from "../hoc/BoxLayout";
-import Button from 'react-bootstrap/Button';
+import Button from '@material-ui/core/Button'
 
+
+import { MuiThemeProvider } from '@material-ui/core/styles'
+import CssBaseline from '@material-ui/core/CssBaseline'
+
+
+import Typography from '@material-ui/core/Typography';
+import Box from '@material-ui/core/Box';
+import Link from '@material-ui/core/Link';
+
+
+
+import { withStyles } from '@material-ui/core/styles'
 
 const ObserverContainers = props => {
   const [queries, updateQueries] = useState([]);
@@ -65,14 +77,22 @@ const ObserverContainers = props => {
     <React.Fragment>
 
       <div id="observerContainers">
-      
-        <HistoryOfPastQueries queries={queries} isToggle={isToggle} />
+    
+  
+
+      <HistoryOfPastQueries queries={queries} isToggle={isToggle} />
+
+        
         <Query2 queries={queries} historyBtn={historyBtn} />
         <GraphQLResponse results={results} historyBtn={historyBtn} />
         { props.schemaStatus ? <Schema historyBtn={historyBtn} url={url} queries={queries}/> : null }
         { props.cacheStatus ? <ApolloGraphQLCache historyBtn={historyBtn} url={url} queries={queries}/> : null}
-        <Button id="cache" onClick={getCache}> Get Cache  </Button>
+        <Button id="cache"  variant="contained"
+          color="secondary" onClick={getCache}> Get Cache  </Button>
      
+
+      
+    
       </div>
     </React.Fragment>
   );
