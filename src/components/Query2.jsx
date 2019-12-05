@@ -2,6 +2,9 @@ import React from "react";
 import ReactJson from "react-json-view";
 import { SSL_OP_TLS_ROLLBACK_BUG } from "constants";
 
+import { Paper } from '@material-ui/core';
+import { Typography } from '@material-ui/core';
+
 const Query2 = props => {
   let queriesList = [];
   if (props.queries) {
@@ -21,12 +24,16 @@ const Query2 = props => {
     }
   }
   return (
+    <Paper elevation="3">
+      <Typography variant="h1" component="h2"> 
     <div id="query-container">
       <div id="query-hThree">
         <h3>QUERY</h3>
       </div>
       <span>{queriesList[props.historyBtn]}</span>
     </div>
+    </Typography>
+</Paper>
   );
 };
 

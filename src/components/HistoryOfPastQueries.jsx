@@ -22,12 +22,13 @@ const HistoryOfPastQueries = props => {
   let pastQueries = [];
   for (let i = 0; i < props.queries.length; i++) {
     pastQueries.push(
-      <div id="queryBox" onClick={() => props.isToggle(i)}>
-        <div>Query {i + 1}</div>
+      <ListItem><div id="queryBox" onClick={() => props.isToggle(i)}>
+       <ListItemText> <div>Query {i + 1}</div></ListItemText>
         <div>
-        <button className="time-button"><Clock format={"HH:mm:ss"} /></button>
+        <Button className="time-button"><Clock format={"HH:mm:ss"} /></Button>
         </div>
       </div>
+      </ListItem>
     );
   }
 
