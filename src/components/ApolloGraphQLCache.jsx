@@ -18,8 +18,10 @@ const ApolloGraphQLCache = props => {
         collapsed={3}
         enableClipboard={false}
         displayDataTypes={false}
-        displayObjectSize={false}
+        displayObjectSiz
+        e={false}
       />
+       
     </div>
   );
 };

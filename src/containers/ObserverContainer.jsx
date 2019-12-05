@@ -5,6 +5,50 @@ import GraphQLResponse from "../components/GraphQLResponse.jsx";
 import Schema from "../components/Schema.jsx";
 import ApolloGraphQLCache from "../components/ApolloGraphQLCache.jsx";
 
+import { MuiThemeProvider } from '@material-ui/core/styles';
+import darkBaseTheme from 'material-ui/styles/baseThemes/darkBaseTheme';
+import getMuiTheme from 'material-ui/styles/getMuiTheme';
+import AppBar from 'material-ui/AppBar';
+
+import FlatButton from 'material-ui/FlatButton';
+import {Card, CardActions} from 'material-ui/Card';
+import Drawer from 'material-ui/Drawer';
+import RaisedButton from 'material-ui/RaisedButton';
+import TextField from 'material-ui/TextField';
+import IconButton from 'material-ui/IconButton';
+import {cyan200, cyan800, grey900, white} from 'material-ui/styles/colors';
+
+import ListItem from '@material-ui/core/ListItem';
+import Container from '@material-ui/core/Container';
+
+
+
+// import { withRouter } from 'react-router-dom';
+import Button from '@material-ui/core/Button';
+// import * as d3 from 'd3';
+import Zoom from '@material-ui/core/Zoom';
+import { withStyles } from '@material-ui/core/styles';
+import Tooltip from '@material-ui/core/Tooltip';
+import compose from 'recompose/compose';
+
+
+
+const styles = {
+  chip: {
+    margin: 4,
+  },
+  wrapper: {
+    display: 'flex',
+    flexWrap: 'wrap',
+  },
+};
+
+const iconStyles = {
+  marginRight: 24,
+};
+
+
+
 const ObserverContainers = props => {
   const [queries, updateQueries] = useState([]);
   const [results, updateResults] = useState([]);
@@ -65,13 +109,16 @@ const ObserverContainers = props => {
   return (
     <React.Fragment>
       <div id="observerContainers">
+
         <HistoryOfPastQueries queries={queries} isToggle={isToggle} />
         <Query2 queries={queries} historyBtn={historyBtn} />
         <GraphQLResponse results={results} historyBtn={historyBtn} />
         {props.schemaStatus ? <Schema historyBtn={historyBtn} url={url} queries={queries} /> : null}
         {props.cacheStatus ? <ApolloGraphQLCache historyBtn={historyBtn} url={url} queries={queries} getCache={getCache} cache={cache} /> : null}
+      
       </div>
     </React.Fragment>
+
   );
 };
 

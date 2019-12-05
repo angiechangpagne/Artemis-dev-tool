@@ -3,8 +3,35 @@ import ObserverContainer from "./containers/ObserverContainer.jsx";
 import "./stylesheets/style.scss";
 import Headers from './containers/Headers.jsx';
 
+
+
 import { MuiThemeProvider } from '@material-ui/core/styles';
+import darkBaseTheme from 'material-ui/styles/baseThemes/darkBaseTheme';
+import getMuiTheme from 'material-ui/styles/getMuiTheme';
 import theme from './theme';
+import AppBar from 'material-ui/AppBar';
+
+import FlatButton from 'material-ui/FlatButton';
+import {Card, CardActions} from 'material-ui/Card';
+import Drawer from 'material-ui/Drawer';
+import RaisedButton from 'material-ui/RaisedButton';
+import TextField from 'material-ui/TextField';
+import IconButton from 'material-ui/IconButton';
+import {cyan200, cyan800, grey900, white} from 'material-ui/styles/colors';
+
+const styles = {
+  chip: {
+    margin: 4,
+  },
+  wrapper: {
+    display: 'flex',
+    flexWrap: 'wrap',
+  },
+};
+
+const iconStyles = {
+  marginRight: 24,
+};
 
 
 const App = props => {
@@ -27,8 +54,11 @@ const App = props => {
     updateSchemaStatus(false);
   }
 
+
+
+
   return (
-    <MuiThemeProvider theme={theme}> 
+    <MuiThemeProvider muiTheme={getMuiTheme(darkBaseTheme)}> 
 
     <React.Fragment>
       <Headers schemaStatus={schemaStatus} cacheStatus={cacheStatus} updateSchemaStatus={updateSchemaStatus} updateCacheStatus={updateCacheStatus} schemaToggle={schemaToggle} cacheToggle={cacheToggle} />
