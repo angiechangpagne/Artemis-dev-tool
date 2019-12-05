@@ -18,7 +18,7 @@ h1, h2, h3 {
 
 #root {
   position: fixed;
-  background-color: rgb(29, 31, 33);
+  background-color: rgba(44, 45, 46,44);
   font-family: 'Courier New', Courier, monospace !important;
   
   height: 100%;
@@ -64,21 +64,23 @@ h1, h2, h3 {
 }
 
 #query-container {
-  width: 37.5%;
+  width: 33%;
   overflow: auto;
   padding-right: 1rem;
   padding-left: 1rem;
   padding-top: 1rem;
-  border-right: 1px solid white;
+  border-right: 1px solid rgb(114, 209, 221);
 }
 
 #response-container {
-  width: 37.5%;
+  width: 66%;
   height: 100%;
   overflow-y: auto;
   padding-right: 1rem;
   padding-left: 1rem;
   padding-top: 1rem;
+  border-right: 1px solid rgb(81, 129, 136);
+
 }
 
 #schema-container {

@@ -1,7 +1,8 @@
 import React from "react";
 import ReactJson from "react-json-view";
+import "../stylesheets/style.scss";
 
-import { Zoom } from '@material-ui/core';
+// import { Zoom } from '@material-ui/core';
 
 
 const GraphQLResponse = props => {
@@ -15,6 +16,8 @@ const GraphQLResponse = props => {
           iconStyle="triangle"
           indentWidth={1}
           collapsed={false}
+          height={"100%"}
+          width={"100%"}
           enableClipboard={false}
           displayDataTypes={false}
           displayObjectSize={false}
@@ -25,10 +28,12 @@ const GraphQLResponse = props => {
   
   return (
     <div id="response-container">
+    
       <div id="response-hThree">
         <h3 className="graphql-heading">RESPONSE</h3>
       </div>
       <span className="graphql-response">{responseArr[props.historyBtn]}</span>
+     
     </div>
   );
 };

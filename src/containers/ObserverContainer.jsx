@@ -6,23 +6,39 @@ import Schema from "../components/Schema.jsx";
 import ApolloGraphQLCache from "../components/ApolloGraphQLCache.jsx";
 import DropdownMenu from "../components/DropdownMenu.jsx";
 
-import { withStyles } from '@material-ui/core/styles';
 
-import { Button } from '@material-ui/core';
-import { Collapse } from '@material-ui/core';
-import Zoom from '@material-ui/core/Zoom';
-import Tooltip from '@material-ui/core/Tooltip';
+import Accordian from "../components/Accordian.js"
+// import { withStyles } from '@material-ui/core/styles';
 
-import { Slider } from '@material-ui/core';
-//storage level vertical slider
-import { Slide } from '@material-ui/core';
-import { Switch } from '@material-ui/core';
-import { FormControl } from '@material-ui/core';
-import { FormControlLabel } from '@material-ui/core';
+// import { Button } from '@material-ui/core';
+// import { Collapse } from '@material-ui/core';
+// import Zoom from '@material-ui/core/Zoom';
+// import Tooltip from '@material-ui/core/Tooltip';
+
+// import { Slider } from '@material-ui/core';
+// //storage level vertical slider
+// import { Slide } from '@material-ui/core';
+// import { Switch } from '@material-ui/core';
+// import { FormControl } from '@material-ui/core';
+// import { FormControlLabel } from '@material-ui/core';
+
+import {
+  Grid,
+  Card,
+  InputOnChangeData, 
+  Menu,
+  Segment,
+  Container,
+  Sidebar,
+  Icon,
+  Form,
+  Label,
+  Button,
+} from 'semantic-ui-react';
 
 
 
-import _ from 'lodash';
+// import _ from 'lodash';
 
 
 const ObserverContainers = props => {
@@ -84,20 +100,16 @@ const ObserverContainers = props => {
 
   return (
     <React.Fragment>
-    
       <div id="observerContainers">
-        <HistoryOfPastQueries queries={queries} isToggle={isToggle} />
-         <Slide direction="left"> <Query2 queries={queries} historyBtn={historyBtn} /> </Slide>
-          <GraphQLResponse results={results} historyBtn={historyBtn} />
+        <Accordian queries={queries} isToggle={isToggle}/>
+        {/* <HistoryOfPastQueries queries={queries} isToggle={isToggle} /> */}
+        {/* <Query2 queries={queries} historyBtn={historyBtn} />  */}
+        {/* <VerticalDivider position="relative" results={results} queries={queries} historyBtn={historyBtn} /> */}
+          {/* <GraphQLResponse results={results} historyBtn={historyBtn} /> */}
           {props.schemaStatus ? <Schema historyBtn={historyBtn} url={url} queries={queries} /> : null}
           {props.cacheStatus ? <ApolloGraphQLCache historyBtn={historyBtn} url={url} queries={queries} getCache={getCache} cache={cache} /> : null}
       </div>
-      <FormGroup>
-        <FormControlLabel
-          control={<Switch checked={checked} onChange={toggleChecked} />}
-          label="Time Optimization Mode"
-        />
-      </FormGroup>
+  
     </React.Fragment>
   );
 };

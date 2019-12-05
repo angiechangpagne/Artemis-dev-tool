@@ -4,14 +4,6 @@ import { docco } from "react-syntax-highlighter/dist/esm/styles/hljs";
 
 
 
-// import { withStyles } from '@material-ui/core/styles';
-// import Paper from '@material-ui/core/Paper';
-// import CssBaseline from '@material-ui/core/CssBaseline';
-// import { ThemeProvider } from '@material-ui/core/styles';
-// import theme from '../theme';
-
-import ListItem from '@material-ui/core/ListItem';
-import ListItemText from '@material-ui/core/ListItemText';
 
 // const styles = (theme: any) => ({
 

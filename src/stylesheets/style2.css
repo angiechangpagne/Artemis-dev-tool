@@ -1,0 +1,218 @@
+#lapiChromeExtensionContainer {
+    /* -webkit-transform: translateZ(0);
+    -webkit-transform: translateY(0); */
+    position: fixed;
+    height: 165px; 
+      /* top: -165px;       */
+      top: 0px; 
+    left: 0px;
+    width: 100%;
+    z-index: 2147483647;
+     /* background: #dde084;
+    color: black;  */
+}
+
+#targetBodyContainer{
+    /* position: absolute; */
+     /* top: 165px;  */
+     -ms-transform: translateY(230px);
+    -webkit-transform: translateY(230px);
+    transform: translateY(230px) 
+}
+
+
+/* #lapiChromeExtensionContainerSpacer {
+    position: absolute; 
+    height: 165px; 
+    top: 0px;   
+    left: 0px;
+    width: 100%;
+    background: #dde084;
+} */
+
+.redText {
+    background: blue;
+    opacity: .5;
+    color: red;
+    height: 100px;
+}
+ 
+.constWidth {
+padding-left: 10px;
+padding-right: 10px; 
+width: 100%;
+height: 160px;
+z-index: 2000;
+/* Permalink - use to edit and share this gradient: http://colorzilla.com/gradient-editor/#266d26+0,cbebff+100&1+0,0+100 */
+background: -moz-linear-gradient(top, rgb(0, 168, 47) 0%, rgba(203,235,255,0) 100%); /* FF3.6-15 */
+background: -webkit-linear-gradient(top, rgb(0, 168, 47) 0%,rgba(203,235,255,0) 100%); /* Chrome10-25,Safari5.1-6 */
+background: linear-gradient(to bottom, rgb(0, 168, 47) 0%,rgba(203,235,255,0) 100%); /* W3C, IE10+, FF16+, Chrome26+, Opera12+, Safari7+ */
+/* filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#266d26', endColorstr='#00cbebff',GradientType=0 );  IE6-9  */
+} 
+ 
+#lapiChromeExtensionContainer > div > div > div.ui.container.constWidth {
+    width: 100%;
+} 
+
+ div.step {
+     width: 20%; 
+} 
+
+/* step link contract */
+#lapiChromeExtensionContainer > div > div > div.ui.container.constWidth > div > a {
+    width: 20%;
+}
+
+div>.step>.content {
+    margin-top: 20px;
+}
+
+.tb {
+    padding-top: 6px;
+    padding-left: 10px;
+    padding-right: 10px;
+    width: 100%;
+    height: 35px;
+    background-color: #00a82f;
+    color: white;
+    font-size: 1.5em;
+}
+
+.ui.tertiary.segment {
+    height: 30px;
+}
+
+#leftMenu {
+    float: left;
+    /* width: 35px;
+    height: 35px; */
+}
+
+#rightMenu {
+    float: right;
+     width: 70px;
+    /* height: 35px;  */
+}
+
+.tb>#leftMenu>img {
+   -webkit-filter: invert(1);
+   filter: invert(1);
+}
+
+.tb>#rightMenu>img {
+   -webkit-filter: invert(1);
+   filter: invert(1);
+}
+
+.titleDiv {
+    padding-top: 6px;
+    float: left;
+    width: 200px;
+    padding-left: 12px;
+}
+
+#lapiChromeExtensionContainer > div > div > div.tb > h2 > i {
+    font-size: 1em;
+}
+
+.rightHeader {
+  float: right;
+}
+
+.leftHeader {
+  float: left;
+}
+
+ #lapiChromeExtensionContainer > div > div > div.tb > div.leftHeader > h3 {
+    display: inline;
+    background-color: inherit;
+} 
+
+
+div.ui.header {
+    background-color: inherit;
+}
+
+
+
+/* Parent div */
+.liveAPI-highlight {
+  position: absolute;  
+  box-sizing: border-box;
+  border-radius: 2px;
+  display: inline-block;  
+  white-space: pre-wrap;
+  padding: 2px 6px;
+  z-index: 2147483646;
+}
+
+.liveAPI-yellow {
+  background-color: yellow;
+}
+
+/* Child div  */
+.liveAPI-highlight-wrapper {
+  display: inline-block;
+  position: relative;
+}
+
+ .liveAPI-border-yellow {
+  outline: 3px solid yellow;
+
+}
+ 
+/* #lapiChromeExtensionContainer > div > div > div.ui.raised.segment  */
+div.ui.raised.segment {
+    margin-top: -36px;
+    margin-right: 10px;
+    margin-left: 10px;
+    z-index: 2500;
+} 
+
+/* #lapiChromeExtensionContainer > div > div > div.ui.raised.segment > button {
+    margin-left: 10px;
+} */
+
+
+.marginRightTen {
+    margin-right: 10px;
+}
+
+.alertText {
+    display: inline;
+    color: red;
+    margin-left: 20px;
+}
+ 
+
+.successText {
+    color: #00a82f;
+    font-weight: bold;
+    float: left;
+    margin-top: .6em;
+    margin-left: 20px;
+} 
+
+body > div.ui.page.modals.dimmer.transition.visible.active {
+    /* transform: translateY(-165px); */
+    z-index: 6000;
+
+}
+
+/* div.ui.top.left.basic.inverted.popup.transition.visible */
+div.ui.popup.transition.visible {
+    z-index: 5100;
+}
+
+/* .floatLeft {
+    float: left;
+} */
+
+
+.alertTextGrid {
+    display: inline;
+    color: red;
+    margin-left: 10px;
+    position: relative;
+    top: 8px;
+}

@@ -1,11 +1,22 @@
 import React from 'react';
 import Dropdown from '../components/DropdownMenu.jsx';
 
-import { withStyles } from '@material-ui/core/styles';
-import Tabs from '@material-ui/core/Tabs';
-import Tab from '@material-ui/core/Tab';
+import ButtonInverted from '../components/ButtonInverted'
 
-import {Button } from '@material-ui/core'
+import {
+  Grid,
+  Menu,
+  Segment,
+  Sidebar,
+  Form,
+  Label,
+  Button,
+} from 'semantic-ui-react';
+// import { withStyles } from '@material-ui/core/styles';
+// import Tabs from '@material-ui/core/Tabs';
+// import Tab from '@material-ui/core/Tab';
+
+// import {Button } from '@material-ui/core'
 
 // const styles = theme => ({
 //   root: {
@@ -62,25 +73,24 @@ import {Button } from '@material-ui/core'
 
 const Headers = (props) => {
   return (
-    <Tabs>
+  
     <React.Fragment>
-      <div className="hOne">
+
+      <div className="h0ne">
         <h1>ARTEMIS</h1>
         <img></img>
       </div>
+
       <div className="header-container">
         <Dropdown/>
-      <Tab> <button className="header-item item2" onClick={()=> props.schemaToggle()}>
-          SCHEMA
-        </button>
-        </Tab>
-       <Tab> <button className="header-item item3" onClick={()=> props.cacheToggle()}>
-          CACHE
-        </button>
-        </Tab>
+        <ButtonInverted schemaToggle={props.schemaToggle} cacheToggle={props.cacheToggle}/>
+        
+        {/* <button class="ui grey inverted button" className="header-item item2" onClick={()=> props.schemaToggle()}> SCHEMA</button>
+        <button class="ui violet inverted button" className="header-item item3"  onClick={()=> props.cacheToggle()}> CACHE</button> */}
+      
       </div>
     </React.Fragment>
-    </Tabs>
+
 
   )
 }
