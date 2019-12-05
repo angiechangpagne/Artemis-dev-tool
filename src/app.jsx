@@ -8,7 +8,6 @@ import { Container } from 'semantic-ui-react';
 import Accordian from "./components/Accordian.js";
 
 
-
 const App = props => {
   const [schemaStatus, updateSchemaStatus] = useState(false);
   const [cacheStatus, updateCacheStatus] = useState(false);
@@ -39,10 +38,11 @@ const App = props => {
       {/* <DropdownMenu/> */}
       <Container className="App"> 
 
-      <Headers schemaStatus={schemaStatus} cacheStatus={cacheStatus} updateSchemaStatus={updateSchemaStatus} updateCacheStatus={updateCacheStatus} schemaToggle={schemaToggle} cacheToggle={cacheToggle} />
-      <Accordian />
+      <Headers schemaStatus={props.schemaStatus} cacheStatus={cacheStatus} updateSchemaStatus={props.updateSchemaStatus} updateCacheStatus={updateCacheStatus} schemaToggle={schemaToggle} cacheToggle={cacheToggle} />
+       <Accordian /> 
       <ObserverContainer schemaStatus={schemaStatus} cacheStatus={cacheStatus} />
-      <QRContainer results={results} queries={queries} historyBtn={historyBtn}/>
+      <QRContainer results={props.results} queries={props.queries} historyBtn={props.historyBtn}/>
+      
       </Container>
     </React.Fragment>
 

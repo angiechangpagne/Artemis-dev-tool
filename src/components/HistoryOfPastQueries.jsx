@@ -44,8 +44,7 @@ const HistoryOfPastQueries = props => {
   return (
 
   
-    <div id="history-past-queries">
-      {pastQueries}
+    <div id="history-past-queries">{pastQueries}
       {/* <Moment pastQueries={pastQueries}/> */}
     </div>
   

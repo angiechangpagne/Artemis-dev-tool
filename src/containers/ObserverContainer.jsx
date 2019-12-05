@@ -101,7 +101,7 @@ const ObserverContainers = props => {
   return (
     <React.Fragment>
       <div id="observerContainers">
-        <Accordian queries={queries} isToggle={isToggle}/>
+        <Accordian queries={queries} historyBtn={historyBtn} isToggle={isToggle}/>
         {/* <HistoryOfPastQueries queries={queries} isToggle={isToggle} /> */}
         {/* <Query2 queries={queries} historyBtn={historyBtn} />  */}
         {/* <VerticalDivider position="relative" results={results} queries={queries} historyBtn={historyBtn} /> */}
