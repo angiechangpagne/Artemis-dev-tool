@@ -4,6 +4,7 @@ import Query2 from "../components/Query2.jsx";
 import GraphQLResponse from "../components/GraphQLResponse.jsx";
 import Schema from "../components/Schema.jsx";
 import ApolloGraphQLCache from "../components/ApolloGraphQLCache.jsx";
+import DropdownMenu from "../components/DropdownMenu.jsx";
 
 import { MuiThemeProvider } from '@material-ui/core/styles';
 import darkBaseTheme from 'material-ui/styles/baseThemes/darkBaseTheme';
@@ -111,11 +112,18 @@ const ObserverContainers = props => {
       <div id="observerContainers">
 
         <HistoryOfPastQueries queries={queries} isToggle={isToggle} />
+<<<<<<< HEAD
         <Query2 queries={queries} historyBtn={historyBtn} />
         <GraphQLResponse results={results} historyBtn={historyBtn} />
         {props.schemaStatus ? <Schema historyBtn={historyBtn} url={url} queries={queries} /> : null}
         {props.cacheStatus ? <ApolloGraphQLCache historyBtn={historyBtn} url={url} queries={queries} getCache={getCache} cache={cache} /> : null}
       
+=======
+          <Query2 queries={queries} historyBtn={historyBtn} />
+          <GraphQLResponse results={results} historyBtn={historyBtn} />
+          {props.schemaStatus ? <Schema historyBtn={historyBtn} url={url} queries={queries} /> : null}
+          {props.cacheStatus ? <ApolloGraphQLCache historyBtn={historyBtn} url={url} queries={queries} getCache={getCache} cache={cache} /> : null}
+>>>>>>> e42e25116888c5f47d8855c3364bed6336631aa4
       </div>
     </React.Fragment>
 

@@ -2,6 +2,7 @@ import React, { useEffect, useState } from "react";
 import ObserverContainer from "./containers/ObserverContainer.jsx";
 import "./stylesheets/style.scss";
 import Headers from './containers/Headers.jsx';
+// import DropdownMenu from "./components/DropdownMenu.jsx";
 
 
 
@@ -61,6 +62,7 @@ const App = props => {
     <MuiThemeProvider muiTheme={getMuiTheme(darkBaseTheme)}> 
 
     <React.Fragment>
+      {/* <DropdownMenu/> */}
       <Headers schemaStatus={schemaStatus} cacheStatus={cacheStatus} updateSchemaStatus={updateSchemaStatus} updateCacheStatus={updateCacheStatus} schemaToggle={schemaToggle} cacheToggle={cacheToggle} />
       <ObserverContainer schemaStatus={schemaStatus} cacheStatus={cacheStatus} />
     </React.Fragment>
