@@ -1,8 +1,11 @@
 import React from 'react';
+// import { MuiThemeProvider } from '@material-ui/core/styles';
+// import theme from '../theme';
 
 const Headers = (props) => {
   return (
     <React.Fragment>
+      
       <div className="hOne">
         <h1>ARTEMIS</h1>
         <img></img>
@@ -15,6 +18,8 @@ const Headers = (props) => {
           CACHE
         </button>
       </div>
+
+     
     </React.Fragment>
   )
 }

@@ -5,6 +5,8 @@ import GraphQLResponse from "../components/GraphQLResponse.jsx";
 import Schema from "../components/Schema.jsx";
 import ApolloGraphQLCache from "../components/ApolloGraphQLCache.jsx";
 
+
+
 const ObserverContainers = props => {
   const [queries, updateQueries] = useState([]);
   const [results, updateResults] = useState([]);
@@ -64,13 +66,18 @@ const ObserverContainers = props => {
 
   return (
     <React.Fragment>
-      <div id="observerContainers">
+        <MuiThemeProvider theme={theme}>
+       <div id="observerContainers">
+
+  
         <HistoryOfPastQueries queries={queries} isToggle={isToggle} />
         <Query2 queries={queries} historyBtn={historyBtn} />
         <GraphQLResponse results={results} historyBtn={historyBtn} />
         {props.schemaStatus ? <Schema historyBtn={historyBtn} url={url} queries={queries} /> : null}
         {props.cacheStatus ? <ApolloGraphQLCache historyBtn={historyBtn} url={url} queries={queries} getCache={getCache} cache={cache} /> : null}
       </div>
+
+      </MuiThemeProvider>
     </React.Fragment>
   );
 };
