@@ -5,7 +5,7 @@ import "./stylesheets/style.scss";
 import Headers from './containers/Headers.jsx';
 // import DropdownMenu from "./components/DropdownMenu.jsx";
 import { Container } from 'semantic-ui-react';
-import Accordian from "./components/Accordian.js";
+import AccordianFluid from "./components/AccordianFluid.js";
 
 
 const App = props => {
@@ -29,7 +29,7 @@ const App = props => {
   }
 
 
-
+console.log("in app trace")
 
   return (
    
@@ -39,7 +39,7 @@ const App = props => {
       <Container className="App"> 
 
       <Headers schemaStatus={props.schemaStatus} cacheStatus={cacheStatus} updateSchemaStatus={props.updateSchemaStatus} updateCacheStatus={updateCacheStatus} schemaToggle={schemaToggle} cacheToggle={cacheToggle} />
-       <Accordian /> 
+      {/* <AccordianFluid /> */}
       <ObserverContainer schemaStatus={schemaStatus} cacheStatus={cacheStatus} />
       <QRContainer results={props.results} queries={props.queries} historyBtn={props.historyBtn}/>
       

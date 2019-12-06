@@ -7,20 +7,7 @@ import ApolloGraphQLCache from "../components/ApolloGraphQLCache.jsx";
 import DropdownMenu from "../components/DropdownMenu.jsx";
 
 
-import Accordian from "../components/Accordian.js"
-// import { withStyles } from '@material-ui/core/styles';
-
-// import { Button } from '@material-ui/core';
-// import { Collapse } from '@material-ui/core';
-// import Zoom from '@material-ui/core/Zoom';
-// import Tooltip from '@material-ui/core/Tooltip';
-
-// import { Slider } from '@material-ui/core';
-// //storage level vertical slider
-// import { Slide } from '@material-ui/core';
-// import { Switch } from '@material-ui/core';
-// import { FormControl } from '@material-ui/core';
-// import { FormControlLabel } from '@material-ui/core';
+import AccordianFluid from "../components/AccordianFluid.js"
 
 import {
   Grid,
@@ -36,12 +23,9 @@ import {
   Button,
 } from 'semantic-ui-react';
 
-
-
 // import _ from 'lodash';
 
-
-const ObserverContainers = props => {
+const ObserverContainer = props => {
   const [queries, updateQueries] = useState([]);
   const [results, updateResults] = useState([]);
   const [history, recordHistory] = useState([]);
@@ -49,6 +33,8 @@ const ObserverContainers = props => {
   const [url, updateUrl] = useState("");
   const [cache, updateCache] = useState({});
 
+
+  console.log("in observer trace")
   const getCache = () => {
     msgToBackground("contentScript", "getCache", response => {
       console.log(response)
@@ -101,8 +87,8 @@ const ObserverContainers = props => {
   return (
     <React.Fragment>
       <div id="observerContainers">
-        <Accordian queries={queries} historyBtn={historyBtn} isToggle={isToggle}/>
-        {/* <HistoryOfPastQueries queries={queries} isToggle={isToggle} /> */}
+        <AccordianFluid />
+        <HistoryOfPastQueries queries={queries} isToggle={isToggle} />
         {/* <Query2 queries={queries} historyBtn={historyBtn} />  */}
         {/* <VerticalDivider position="relative" results={results} queries={queries} historyBtn={historyBtn} /> */}
           {/* <GraphQLResponse results={results} historyBtn={historyBtn} /> */}
@@ -138,4 +124,4 @@ const IsJsonString = function (str) {
   return true;
 };
 
-export default ObserverContainers;
+export default ObserverContainer;

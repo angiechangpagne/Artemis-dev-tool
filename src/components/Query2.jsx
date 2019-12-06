@@ -28,7 +28,7 @@ const Query2 = props => {
       <div id="query-hThree">
         <h3>QUERY</h3>
       </div>
-      <span>{queriesList[props.historyBtn]}</span>
+      <span>{props.queriesList}</span>
     </div>
  
 
