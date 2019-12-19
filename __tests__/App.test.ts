@@ -9,17 +9,20 @@ import Home from '../src/components/Home';
 import * as renderer from "react-test-renderer";
 
 it("Subject App renders correctly", () => {
-  // const props = { className: "test", value: true, onSelectChanged: (value: boolean) => { return; } };
-  const tree = renderer
-    .create(<App  />)
-    .toJSON();
-  expect(tree).toBe('object');
-});
 
-// it('renders without crashing', () => {
-//     const div = document.createElement('div');
-//     ReactDOM.render(<App />, div);
+  
+  // const props = { className: "test", value: true, onSelectChanged: (value: boolean) => { return; } };
+//   const tree = renderer
+//     .create(<App  />)
+//     .toJSON();
+//   expect(tree).toBeTruthy();
+//   //('object');
 // });
+
+it('renders without crashing', () => {
+    const div = document.createElement('div');
+    ReactDOM.render(<App />, div);
+});
 
 // describe('App', () => {
 //     let wrapper;
@@ -31,4 +34,4 @@ it("Subject App renders correctly", () => {
 //       expect(wrapper.exists(Headers)).toBe(true);
 //       expect(wrapper.exists(Home)).toBe(true);
 //     });
-//   });
+});
