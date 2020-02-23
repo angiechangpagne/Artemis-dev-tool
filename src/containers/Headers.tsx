@@ -7,20 +7,20 @@ export interface IHeaders {
   cacheToggle: () => void,
 }
 
-const Headers: React.FC<IHeaders> = ({ schemaToggle, cacheToggle, visualizerToggle }) => (
+const Headers: React.FC<IHeaders> = (props) => (
   <React.Fragment>
     <div className="hOne">
       <h1>ARTEMIS</h1>
     </div>
     <div className="header-container">
       <Dropdown />
-      <button className="header-item item4" onClick={() => visualizerToggle()}>
+      <button className="header-item item4" onClick={() => props.visualizerToggle()}>
         VISUALIZER
         </button>
-      <button className="header-item item2" onClick={() => schemaToggle()}>
+      <button className="header-item item2" onClick={() => props.schemaToggle()}>
         SCHEMA
         </button>
-      <button className="header-item item3" onClick={() => cacheToggle()}>
+      <button className="header-item item3" onClick={() => props.cacheToggle()}>
         CACHE
         </button>
     </div>
