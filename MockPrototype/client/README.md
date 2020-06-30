@@ -1,3 +1,2 @@
-# Apollo Fullstack Tutorial
-
+# Apollo Fullstack Mock Prototype
 ## Client
