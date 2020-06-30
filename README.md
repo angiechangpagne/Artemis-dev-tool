@@ -24,7 +24,7 @@ The web based extension is best used for React and Express products/applications
 npm install
 npm run build
 ```
-- Open chrome and direct to chrome://extension
+- Open chrome and direct to chrome://extensions/
 - Enable developer mode 
 - click LOAD UNPACKED and upload build folder 
 
@@ -69,5 +69,5 @@ Project Artemis is still in Beta, a subset project of OS-Labs. We encourage you 
 - Enzyme
 - Travis CI
 
-All rights Reserved Artemis Labs
+All Rights Reserved Artemis Labs
 
